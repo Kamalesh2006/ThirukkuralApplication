@@ -14,10 +14,11 @@ public class WelcomePageController implements WelcomePageControllerCallBack, Wel
 			welcomePageView.getThirukkuralByNumber();
 			break;
 		case 2:
-			welcomePageModel.getThirukkuralCategory();
+			welcomePageView.getThirukkuralCategory();
 			break;
 		case 3:
-			
+			welcomePageView.getThirukkuralOfTheDay();
+			break;
 		}
 	}
 

@@ -5,10 +5,5 @@ public class WelcomePageModel implements WelcomePageModelCallBack {
 	public WelcomePageModel(WelcomePageController welcomePageController) {
 		this.welcomePageModel = welcomePageController;
 	}
-	@Override
-	public void getThirukkuralCategory() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

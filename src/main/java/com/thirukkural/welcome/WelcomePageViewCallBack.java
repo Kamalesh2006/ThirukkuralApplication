@@ -4,4 +4,8 @@ public interface WelcomePageViewCallBack {
 
 	void getThirukkuralByNumber();
 
+	void getThirukkuralCategory();
+
+	void getThirukkuralOfTheDay();
+
 }

@@ -8,6 +8,7 @@ public interface SearchThirukkuralModelControllerCallBack {
 
 	void parseExceptionRaised(String msg);
 
-	void kuralJSON(JSONObject kuraljsonObject);
+	void showKural(Long number, String line1, String line2, String tamilexplanation, String translation,
+			String englishTranslation);
 
 }

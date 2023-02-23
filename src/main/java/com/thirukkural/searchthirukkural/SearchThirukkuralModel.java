@@ -29,7 +29,13 @@ public class SearchThirukkuralModel implements SearchThirukkuralModelCallBack {
 			JSONObject thirukuralJson = (JSONObject)obj;
 			JSONArray array = (JSONArray)thirukuralJson.get("kural");
 			JSONObject kuraljsonObject = (JSONObject)array.get(kuralEnn);
-			searchThirukkuralController.kuralJSON(kuraljsonObject);
+			Long number = (Long)kuraljsonObject.get("Number");
+			String line1 = (String)kuraljsonObject.get("Line1");
+			String line2 = (String)kuraljsonObject.get("Line2");
+			String tamilexplanation=(String)kuraljsonObject.get("mv");
+			String translation = (String)kuraljsonObject.get("Translation");
+			String englishTranslation = (String)kuraljsonObject.get("explanation");
+			searchThirukkuralController.showKural(number,line1,line2,tamilexplanation,translation,englishTranslation);
 			
 		}catch(FileNotFoundException e) {
 			searchThirukkuralController.fileNotFound("File not found");

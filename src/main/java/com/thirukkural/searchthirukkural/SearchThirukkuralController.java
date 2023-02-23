@@ -1,5 +1,7 @@
 package com.thirukkural.searchthirukkural;
 
+import java.util.Random;
+
 import org.json.simple.JSONObject;
 
 public class SearchThirukkuralController implements SearchThirukkuralControllerCallBack, SearchThirukkuralModelControllerCallBack {
@@ -28,16 +30,6 @@ public class SearchThirukkuralController implements SearchThirukkuralControllerC
 		searchThirukkuralView.printStatus(msg);
 	}
 	@Override
-	public void kuralJSON(JSONObject kuraljsonObject) {
-		Long number = (Long)kuraljsonObject.get("Number");
-		String line1 = (String)kuraljsonObject.get("Line1");
-		String line2 = (String)kuraljsonObject.get("Line2");
-		String tamilexplanation=(String)kuraljsonObject.get("mv");
-		String translation = (String)kuraljsonObject.get("Translation");
-		String englishTranslation = (String)kuraljsonObject.get("explanation");
-		searchThirukkuralView.showKural(number,line1,line2,tamilexplanation,translation,englishTranslation);
-	}
-	@Override
 	public void decideOption(int option) {
 		switch(option) {
 		case 1:
@@ -46,6 +38,17 @@ public class SearchThirukkuralController implements SearchThirukkuralControllerC
 		case 2:
 			searchThirukkuralView.callBackToWelcomePage();
 		}
+	}
+	@Override
+	public void generateRandom() {
+		Random r = new Random();
+		int rand = r.nextInt(1330);
+		searchThirukkuralModel.getThirukkuralJSon(rand);
+	}
+	@Override
+	public void showKural(Long number, String line1, String line2, String tamilexplanation, String translation,
+			String englishTranslation) {
+		searchThirukkuralView.showKural(number, line1, line2, tamilexplanation, translation, englishTranslation);
 	}
 
 }

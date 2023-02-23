@@ -43,4 +43,9 @@ public class SearchThirukkuralView implements SearchThirukkuralViewCallBack{
 	public void callBackToWelcomePage() {
 		welcomePage.welcome();
 	}
+	public void generateThirukkuralOfTheDay(WelcomePageView welcomePageView) {
+		this.welcomePage=welcomePageView;
+		System.out.println("அன்றைய திருக்குறள்");
+		searchThirukkuralController.generateRandom();
+	}
 }

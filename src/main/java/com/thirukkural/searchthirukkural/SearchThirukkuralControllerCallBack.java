@@ -6,4 +6,6 @@ public interface SearchThirukkuralControllerCallBack {
 
 	void decideOption(int option);
 
+	void generateRandom();
+
 }

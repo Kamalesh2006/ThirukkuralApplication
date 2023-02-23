@@ -26,21 +26,19 @@ public class ReadDataFromJSONFile {
 		System.out.println(line1);
 		System.out.println(line2);
 		
-		FileReader reader2 = new FileReader(".\\jsonfiles\\thirukkuralAdhigaram.json");
+		FileReader reader2 = new FileReader(".\\jsonfiles\\thirukkuralAdhigaramEdited.json");
 		Object obj2 = null;
 		try {
-			obj = jsonParser.parse(reader2);
+			obj2 = jsonParser.parse(reader2);
 		} catch (IOException | ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		JSONObject thirukuralAdhigaram =(JSONObject)obj2;
-		String summa = (String)thirukuralAdhigaram.get("section");
-		System.out.println(summa);
-		/*JSONArray array2 = (JSONArray)thirukuralAdhigaram.get("tamil");
-		JSONObject jsonObject2 = (JSONObject)array.get(0);
-		String linel= (String)jsonObject2.get("tamil");
-		System.out.println(linel);*/
+		JSONArray array2 = (JSONArray)thirukuralAdhigaram.get("detail");
+		JSONObject jsonObject2 = (JSONObject)array2.get(1);
+		String line3 = (String)jsonObject2.get("name");
+		System.out.println(line3);
 		
 	}
 }
