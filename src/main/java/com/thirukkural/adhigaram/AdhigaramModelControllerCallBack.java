@@ -1,7 +1,5 @@
 package com.thirukkural.adhigaram;
 
-import org.json.simple.JSONObject;
-
 import com.thirukkural.dto.Adhigaram;
 import com.thirukkural.dto.Kural;
 

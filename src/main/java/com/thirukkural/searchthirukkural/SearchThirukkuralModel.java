@@ -11,6 +11,7 @@ public class SearchThirukkuralModel implements SearchThirukkuralModelCallBack {
 	}
 	@Override
 	public void getThirukkuralJSon(int kuralEnn) {
+		//getting kural pojo from repository
 		Kural kural = repositoryInstance.getThirukural(kuralEnn);
 		searchThirukkuralController.showKural(kural);
 	}
