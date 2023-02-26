@@ -4,6 +4,8 @@ import java.util.Random;
 
 import org.json.simple.JSONObject;
 
+import com.thirukkural.dto.Kural;
+
 public class SearchThirukkuralController implements SearchThirukkuralControllerCallBack, SearchThirukkuralModelControllerCallBack {
 	private SearchThirukkuralViewCallBack searchThirukkuralView;
 	private SearchThirukkuralModelCallBack searchThirukkuralModel;
@@ -46,9 +48,8 @@ public class SearchThirukkuralController implements SearchThirukkuralControllerC
 		searchThirukkuralModel.getThirukkuralJSon(rand);
 	}
 	@Override
-	public void showKural(Long number, String line1, String line2, String tamilexplanation, String translation,
-			String englishTranslation) {
-		searchThirukkuralView.showKural(number, line1, line2, tamilexplanation, translation, englishTranslation);
+	public void showKural(Kural kural) {
+		searchThirukkuralView.showKural(kural);
 	}
 
 }

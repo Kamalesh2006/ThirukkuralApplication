@@ -1,11 +1,12 @@
 package com.thirukkural.adhigaram;
 
+import com.thirukkural.dto.Kural;
+
 public interface AdhigaramViewCallBack {
 
 	void printStatus(String msgstring);
 
-	void showAllKural(Long[] number, String[] line1, String[] line2, String[] tamilExplanation, String[] translation,
-			String[] englishExplanation);
+	void showAllKural(Kural[] adhigaramKural);
 
 	void goToWelcomePage();
 

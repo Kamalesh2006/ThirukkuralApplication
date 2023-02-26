@@ -1,12 +1,12 @@
 package com.thirukkural.searchthirukkural;
 
-import org.json.simple.JSONObject;
+import com.thirukkural.dto.Kural;
 
 public interface SearchThirukkuralViewCallBack {
 
 	void printStatus(String string);
 
-	void showKural(Long number,String line1, String line2, String tamilexplanation, String translation, String englishTranslation);
+	void showKural(Kural kural);
 
 	void callBackToWelcomePage();
 

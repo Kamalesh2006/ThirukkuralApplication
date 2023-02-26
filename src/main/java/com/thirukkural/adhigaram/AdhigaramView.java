@@ -2,6 +2,7 @@ package com.thirukkural.adhigaram;
 
 import java.util.Scanner;
 
+import com.thirukkural.dto.Kural;
 import com.thirukkural.welcome.WelcomePageView;
 
 public class AdhigaramView implements AdhigaramViewCallBack{
@@ -24,19 +25,18 @@ public class AdhigaramView implements AdhigaramViewCallBack{
 		adhigaramSearch(welcomeView);
 	}
 	@Override
-	public void showAllKural(Long[] number, String[] line1, String[] line2, String[] tamilExplanation,
-			String[] translation, String[] englishExplanation) {
+	public void showAllKural(Kural[] adhigaramKural) {
 		int start =0;
 		int end =10;
 		while(start<end) {
-			System.out.println("குறள் எண் "+number[start]);
+			System.out.println("குறள் எண் "+adhigaramKural[start].getNumber());
 			System.out.println("----------------------------------------------");
-			System.out.println(" "+line1[start]);
-			System.out.println(" "+line2[start]);
+			System.out.println(" "+adhigaramKural[start].getLine1());
+			System.out.println(" "+adhigaramKural[start].getLine2());
 			System.out.println("----------------------------------------------");
-			System.out.println("தமிழ் விளக்கம்: "+tamilExplanation[start]);
-			System.out.println("\nEnglish Translation: "+translation[start]);
-			System.out.println(englishExplanation[start]+"\n");
+			System.out.println("தமிழ் விளக்கம்: "+adhigaramKural[start].getTamilExplanation());
+			System.out.println("\nEnglish Translation: "+adhigaramKural[start].getTranslation());
+			System.out.println(adhigaramKural[start].getEnglishExplanation()+"\n");
 			start++;
 		}
 		System.out.println("வேறு குறளில் தேட வேண்டுமா? (1=ஆம்/2=இல்லை)");

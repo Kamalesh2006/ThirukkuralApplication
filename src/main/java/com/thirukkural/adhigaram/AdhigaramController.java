@@ -1,5 +1,8 @@
 package com.thirukkural.adhigaram;
 
+import com.thirukkural.dto.Adhigaram;
+import com.thirukkural.dto.Kural;
+
 public class AdhigaramController implements AdhigaramControllerCallBack, AdhigaramModelControllerCallBack {
 	private AdhigaramViewCallBack adhigaramView;
 	private AdhigaramModelCallBack adhigaramModel;
@@ -23,10 +26,10 @@ public class AdhigaramController implements AdhigaramControllerCallBack, Adhigar
 		adhigaramView.printStatus(msg);
 	}
 	@Override
-	public void adhigaramReceived(String name, Long start, Long end) {
-		adhigaramView.printAdhigaramName("அதிகாரம் பெயர் "+name);
-		long s = start-1;
-		long e = end;
+	public void adhigaramReceived(Adhigaram adhigaram) {
+		adhigaramView.printAdhigaramName("அதிகாரம் பெயர் "+adhigaram.getName());
+		long s = adhigaram.getStart()-1;
+		long e = adhigaram.getEnd();
 		adhigaramModel.getAdhigaramKural((int)s,(int)e);
 	}
 	@Override
@@ -46,9 +49,8 @@ public class AdhigaramController implements AdhigaramControllerCallBack, Adhigar
 		}
 	}
 	@Override
-	public void showAllKural(Long[] number, String[] line1, String[] line2, String[] tamilExplanation,
-			String[] translation, String[] englishExplanation) {
-		adhigaramView.showAllKural(number, line1, line2, tamilExplanation, translation, englishExplanation);
+	public void showAllKural(Kural[] adhigaramKural) {
+		adhigaramView.showAllKural(adhigaramKural);
 		
 	}
 

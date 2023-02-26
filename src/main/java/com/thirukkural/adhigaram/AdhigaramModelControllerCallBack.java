@@ -2,15 +2,17 @@ package com.thirukkural.adhigaram;
 
 import org.json.simple.JSONObject;
 
+import com.thirukkural.dto.Adhigaram;
+import com.thirukkural.dto.Kural;
+
 public interface AdhigaramModelControllerCallBack {
 
 	void fileNotFound(String string);
 
-	void adhigaramReceived(String name, Long start, Long end);
+	void adhigaramReceived(Adhigaram adhigaram);
 
 	void parseExceptionRaised(String msg);
 
-	void showAllKural(Long[] number, String[] line1, String[] line2, String[] tamilExplanation, String[] translation,
-			String[] englishExplanation);
+	void showAllKural(Kural[] kural);
 
 }

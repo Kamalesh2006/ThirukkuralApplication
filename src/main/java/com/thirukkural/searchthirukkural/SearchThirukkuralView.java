@@ -2,6 +2,7 @@ package com.thirukkural.searchthirukkural;
 
 import java.util.Scanner;
 
+import com.thirukkural.dto.Kural;
 import com.thirukkural.welcome.WelcomePageView;
 
 public class SearchThirukkuralView implements SearchThirukkuralViewCallBack{
@@ -23,16 +24,15 @@ public class SearchThirukkuralView implements SearchThirukkuralViewCallBack{
 		showSearchThirukkural(welcomePage);
 	}
 	@Override
-	public void showKural(Long number,String line1, String line2, String tamilexplanation, String translation,
-			String englishTranslation) {
-		System.out.println("குறள் எண் "+number);
+	public void showKural(Kural kural) {
+		System.out.println("குறள் எண் "+kural.getNumber());
 		System.out.println("----------------------------------------------");
-		System.out.println(" "+line1);
-		System.out.println(" "+line2);
+		System.out.println(" "+kural.getLine1());
+		System.out.println(" "+kural.getLine2());
 		System.out.println("----------------------------------------------");
-		System.out.println("தமிழ் விளக்கம்: "+tamilexplanation);
-		System.out.println("\nEnglish Translation: "+translation);
-		System.out.println(englishTranslation);
+		System.out.println("தமிழ் விளக்கம்: "+kural.getTamilExplanation());
+		System.out.println("\nEnglish Translation: "+kural.getTranslation());
+		System.out.println(kural.getEnglishExplanation());
 		System.out.println("வேறு குறளில் தேட வேண்டுமா? (1=ஆம்/2=இல்லை)");
 		int option = scanner.nextInt();
 		searchThirukkuralController.decideOption(option);
@@ -45,7 +45,7 @@ public class SearchThirukkuralView implements SearchThirukkuralViewCallBack{
 	}
 	public void generateThirukkuralOfTheDay(WelcomePageView welcomePageView) {
 		this.welcomePage=welcomePageView;
-		System.out.println("அன்றைய திருக்குறள்");
+		System.out.println("இன்றைய திருக்குறள்");
 		searchThirukkuralController.generateRandom();
 	}
 }

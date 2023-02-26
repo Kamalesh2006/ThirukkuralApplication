@@ -16,7 +16,7 @@ public class WelcomePageView implements WelcomePageViewCallBack{
 	public void welcome(){
 		System.out.println("\n1) திருக்குறளைத் எண் வாரியாக தேட 1ஐ அழுத்தவும்");
 		System.out.println("2) திருக்குறள் அதிகாரங்கள் வாரியாக பார்க்க 2ஐ அழுத்தவும்");
-		System.out.println("3) அன்றைய திருக்குறள் பார்க்க\n");
+		System.out.println("3) இன்றைய திருக்குறள் பார்க்க\n");
 		int option = scanner.nextInt();
 		welcomePageController.decideOptions(option);
 	}
